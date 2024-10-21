@@ -1,0 +1,32 @@
+// Approach 1 -> SC -> O(H)
+
+class BSTIterator {
+    stack<TreeNode*> myStack;
+public:
+    BSTIterator(TreeNode* root) {
+        pushAll(root);
+    }
+    
+    int next() {
+        TreeNode* tmpNode=myStack.top();
+        myStack.pop();
+        pushAll(tmpNode->right);
+        return tmpNode->val;
+    }
+    
+    bool hasNext() {
+        return !myStack.empty();
+    }
+    
+    void pushAll(TreeNode* node)
+    {
+        while(node!=NULL)
+        {
+            myStack.push(node);
+            node=node->left;
+        }
+    }
+};
+
+// Approach 2 -> 
+write inorder then iterate through it 
