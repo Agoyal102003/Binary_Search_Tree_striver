@@ -1,0 +1,5 @@
+//
+Left subtree < root < right subtree
+
+inorderof a binary Tree can tell us if its a BST or not.
+if inorder is in ascending order than it is a BST else not.
